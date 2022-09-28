@@ -1,23 +1,27 @@
-/*
-Navicat MySQL Data Transfer
+## day01 作业
 
-Source Server         : localhost
-Source Server Version : 50525
-Source Host           : localhost:3306
-Source Database       : day17
+星空:
+麻烦 志哥看看
 
-Target Server Type    : MYSQL
-Target Server Version : 50525
-File Encoding         : 65001
+志哥:
+utf8mb4_0900_ai_ci 这个用默认的
 
-Date: 2022-09-28 16:05:11
-*/
+志哥:
+时间用long
 
-SET FOREIGN_KEY_CHECKS=0;
+志哥:
+表名 统一用`user`就可以
 
--- ----------------------------
--- Table structure for user
--- ----------------------------
+志哥:
+所有字段不允许为空 都加默认值
+
+星空:
+long  不是对应数据库中 INTEGER UNSIGNED
+
+志哥:
+bigint
+
+```mysql
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `user_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '用户id',
@@ -35,8 +39,6 @@ CREATE TABLE `user` (
   UNIQUE KEY `email` (`email`),
   KEY `u_idx_user_name` (`user_name`),
   KEY `u_idx_email` (`email`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='用户表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='用户表';
+```
 
--- ----------------------------
--- Records of user
--- ----------------------------
